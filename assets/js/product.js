@@ -40,9 +40,10 @@ productDetails.innerHTML =`
                 max="5"
               />
             </div>
-            <button type="submit" class="btn btn-primary btn-add">
+            <button class="btn btn-primary btn-add">
               <i class="bi bi-cart-plus"></i> Add to Cart
             </button>
           </form>
         </div>
+
       </div>`
