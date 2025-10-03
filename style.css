@@ -6,7 +6,7 @@
 
 /* Global styles */
 body {
-  font-family: 'Segoe UI', sans-serif;
+  font-family: "Segoe UI", sans-serif;
 }
 
 .navbar-brand {
@@ -15,27 +15,44 @@ body {
 
 /* Hero section */
 .hero {
-  padding: 80px 0;
-  text-align: left;
+  min-height: 90vh;
   display: flex;
-  align-items: center;
   justify-content: center;
-  flex-direction: column;
+  align-items: center;
+  position: relative;
 }
-.hero img {
-  max-height: 250px;
+
+.hero-slide {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%) translateY(0);
+  text-align: center;
+  opacity: 0;
+  transition: opacity 1s ease, transform 1s ease;
 }
-.hero h1 {
-  font-size: 2.5rem;
-  font-weight: bold;
+
+.hero-slide img {
+  max-width: 400px;
+  width: 100%;
+  animation: float 4s ease-in-out infinite;
 }
-.hero p {
-  font-size: 1.1rem;
+
+.hero-slide.active {
+  opacity: 1;
+  position: relative;
+  transform: translateX(-50%) translateY(0);
 }
-.hero .btn {
-  padding: 10px 25px;
-  font-weight: bold;
+
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
 }
+
 
 /* Shop box */
 .shop-box {
@@ -178,3 +195,47 @@ footer a:hover {
   font-size: 1.4rem;
   margin-right: 15px;
 }
+
+/* SimplePagination.js Bootstrap styling */
+.simple-pagination {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+  list-style: none;
+  padding-left: 0;
+}
+
+.simple-pagination li {
+  margin: 0 3px;
+}
+
+.simple-pagination li a,
+.simple-pagination li span {
+  display: block;
+  padding: 6px 12px;
+  font-weight: bold;
+  font-size: 14px;
+  color: #0d6efd; /* Bootstrap primary color */
+  background-color: #fff;
+  border: 1px solid #dee2e6;
+  border-radius: 0.375rem;
+  text-decoration: none;
+}
+
+.simple-pagination li a:hover {
+  background-color: #e9ecef;
+}
+
+.simple-pagination .active span {
+  background-color: #0d6efd;
+  color: #fff;
+  border-color: #0d6efd;
+}
+
+.simple-pagination .disabled span {
+  color: #6c757d;
+  background-color: #fff;
+  border-color: #dee2e6;
+  cursor: not-allowed;
+}
+
